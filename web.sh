@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 composerDownload(){
     if [ -f "composer.json" ]
@@ -21,7 +21,7 @@ composerInstall(){
     then
         #    rm -r -f vendor
         #    rm -r -f composer.lock
-        php composer.phar install
+        composer install
     else
         echo The project does not contain composer.json, so you dont need do composer.phar install
     fi
@@ -32,7 +32,7 @@ composerUpdate(){
     then
         #    rm -r -f vendor
         #    rm -r -f composer.lock
-        php composer.phar update
+        composer update
     else
         echo The project does not contain composer.json, so you dont need do composer.phar install
     fi
@@ -41,14 +41,14 @@ composerUpdate(){
 
 calcBranch(){
 	case $1 in
-	stage)
-        	echo stage
+	sandbox)
+        	echo sandbox
 	;;
 	production)
         	echo production
 	;;
 	*)
-        	echo stage
+        	echo sandbox
 	;;
 	esac
 }
